@@ -1,0 +1,111 @@
+{
+  "actions": {
+    "createSuccess": "Záznam byl úspěšně vytvořen",
+    "delete": "Smazat",
+    "deleteConfirm": "Opravdu chcete smazat tento záznam?",
+    "deleteError": "Při mazání záznamu došlo k chybě",
+    "deleteSuccess": "Záznam byl úspěšně smazán",
+    "detail": "Detail",
+    "edit": "Upravit",
+    "new": "Nový",
+    "showDeleted": "Zobrazit smazané",
+    "updateSuccess": "Záznam byl úspěšně aktualizován"
+  },
+  "auth": {
+    "forgotPassword": {
+      "backTo": "Zpět na",
+      "email": "Email",
+      "login": "přihlášení",
+      "submit": "Odeslat odkaz pro obnovu hesla",
+      "subtitle": "Zadejte svůj email a my vám pošleme odkaz pro obnovu hesla",
+      "success": "Odkaz pro obnovu hesla byl odeslán na váš email",
+      "title": "Obnova hesla"
+    },
+    "login": {
+      "email": "Email",
+      "forgotPassword": "Zapomenuté heslo?",
+      "noAccount": "Nemáte účet?",
+      "password": "Heslo",
+      "register": "Registrovat se",
+      "submit": "Přihlásit se",
+      "subtitle": "Zadejte své přihlašovací údaje",
+      "title": "Přihlášení"
+    },
+    "logout": "Odhlásit se",
+    "register": {
+      "confirmPassword": "Potvrďte heslo",
+      "email": "Email",
+      "haveAccount": "Máte již účet?",
+      "login": "Přihlásit se",
+      "password": "Heslo",
+      "submit": "Registrovat se",
+      "subtitle": "Zadejte své registrační údaje",
+      "title": "Registrace"
+    },
+    "resetPassword": {
+      "backTo": "Zpět na",
+      "confirmPassword": "Potvrďte heslo",
+      "login": "přihlášení",
+      "password": "Heslo",
+      "submit": "Obnovit heslo",
+      "subtitle": "Zadejte nové heslo",
+      "success": "Heslo bylo úspěšně obnoveno. Nyní se můžete přihlásit",
+      "title": "Obnova hesla"
+    }
+  },
+  "calendar": {
+    "allDay": "celý den",
+    "day": "Den",
+    "month": "Měsíc",
+    "months": [
+      "Leden",
+      "Únor",
+      "Březen",
+      "Duben",
+      "Květen",
+      "Červen",
+      "Červenec",
+      "Srpen",
+      "Září",
+      "Říjen",
+      "Listopad",
+      "Prosinec"
+    ],
+    "title": "Kalendář",
+    "today": "Dnes",
+    "week": "Týden",
+    "weekDays": ["Po", "Út", "St", "Čt", "Pá", "So", "Ne"]
+  },
+  "dataTable": {
+    "actions": "Akce",
+    "clearFilters": "Zrušit filtry",
+    "collapseRow": "Sbalit řádek",
+    "expandRow": "Rozbalit řádek",
+    "noData": "Žádná data",
+    "search": "Hledat"
+  },
+  "form": {
+    "submit": "Odeslat"
+  },
+  "home": {
+    "title": "Domů"
+  },
+  "more": "více",
+  "noResults": "Žádné výsledky",
+  "notFound": {
+    "backToHome": "Zpět na domovskou stránku",
+    "description": "Omlouváme se, ale stránka, kterou hledáte, neexistuje.",
+    "title": "Stránka nenalezena"
+  },
+  "user": {
+    "confirmPassword": "Potvrďte heslo",
+    "email": "Email",
+    "name": "Jméno",
+    "password": "Heslo",
+    "role": "Role",
+    "title": "Uživatel"
+  },
+  "users": {
+    "title": "Uživatelé"
+  }
+}
