@@ -1,0 +1,14 @@
+dialog::backdrop {
+  animation: var(--animate-fade-in);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+dialog.closing::backdrop {
+  animation: var(--animate-fade-out) forwards;
+}
+
+@media (prefers-color-scheme: dark) {
+  dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
