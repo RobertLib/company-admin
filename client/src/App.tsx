@@ -1,35 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Route, Routes } from "react-router";
+import { SessionProvider } from "./contexts/session-context";
+import { SnackbarProvider } from "./contexts/snackbar-context";
+import { DrawerProvider } from "./contexts/drawer-context";
+import { ProtectedRoute } from "./components/protected-route";
+import ErrorBoundary from "./error-boundary";
+import LoginPage from "./pages/auth/login";
+import RegisterPage from "./pages/auth/register";
+import ForgotPasswordPage from "./pages/auth/forgot-password";
+import ResetPasswordPage from "./pages/auth/reset-password";
+import NotFound from "./pages/not-found";
+import Layout from "./pages/layout";
+import Home from "./pages/home";
+import UsersPage from "./pages/users";
+import UserDetailPage from "./pages/users/user-detail";
+import CalendarPage from "./pages/calendar";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <ErrorBoundary>
+      <SessionProvider>
+        <SnackbarProvider>
+          <DrawerProvider>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/register" element={<RegisterPage />} />
+                <Route
+                  path="/forgot-password"
+                  element={<ForgotPasswordPage />}
+                />
+                <Route path="/reset-password" element={<ResetPasswordPage />} />
+                <Route
+                  path="/"
+                  element={
+                    <ProtectedRoute>
+                      <Layout />
+                    </ProtectedRoute>
+                  }
+                >
+                  <Route index element={<Home />} />
+                  <Route path="/users" element={<UsersPage />} />
+                  <Route path="/users/:id" element={<UserDetailPage />} />
+                  <Route path="/calendar" element={<CalendarPage />} />
+                  <Route path="*" element={<NotFound />} />
+                </Route>
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </BrowserRouter>
+          </DrawerProvider>
+        </SnackbarProvider>
+      </SessionProvider>
+    </ErrorBoundary>
+  );
 }
 
-export default App
+export default App;
