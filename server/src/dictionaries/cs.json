@@ -1,0 +1,33 @@
+{
+  "auth": {
+    "errors": {
+      "invalidCredentials": "Neplatný email nebo heslo",
+      "invalidEmail": "Neplatný email"
+    },
+    "forgotPassword": {
+      "emailSubject": "Obnova hesla",
+      "emailText": "Klikněte na následující odkaz pro obnovu hesla"
+    }
+  },
+  "form": {
+    "errors": {
+      "invalidForm": "Neplatný formulář"
+    }
+  },
+  "user": {
+    "errors": {
+      "accountDeactivated": "Uživatelský účet je deaktivován",
+      "confirmPasswordRequired": "Potvrzení hesla je povinné",
+      "emailAlreadyExists": "Uživatel s tímto emailem již existuje",
+      "emailRequired": "Email je povinný",
+      "invalidEmail": "Neplatný email",
+      "invalidRefreshToken": "Neplatný token pro obnovení",
+      "invalidRole": "Neplatná role",
+      "invalidToken": "Neplatný odkaz pro obnovení hesla",
+      "passwordRequired": "Heslo je povinné",
+      "passwordsDoNotMatch": "Hesla se neshodují",
+      "passwordTooShort": "Heslo musí mít alespoň 8 znaků",
+      "userNotFound": "Uživatel nenalezen"
+    }
+  }
+}
