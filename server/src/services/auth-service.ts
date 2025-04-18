@@ -85,7 +85,9 @@ export const register = async (
     { expiresIn: "1d" }
   );
 
-  return { accessToken, user, success: true };
+  const { password: _, ...userWithoutPassword } = user;
+
+  return { accessToken, user: userWithoutPassword, success: true };
 };
 
 export const forgotPassword = async (email: string) => {

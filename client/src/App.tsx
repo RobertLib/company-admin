@@ -10,6 +10,7 @@ import ResetPasswordPage from "./pages/auth/reset-password";
 import NotFound from "./pages/not-found";
 import Layout from "./pages/layout";
 import Home from "./pages/home";
+import UsersPage from "./pages/users";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
                 }
               >
                 <Route index element={<Home />} />
+                <Route path="/users" element={<UsersPage />} />
               </Route>
               <Route path="*" element={<NotFound />} />
             </Routes>

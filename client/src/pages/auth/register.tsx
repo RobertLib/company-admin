@@ -7,6 +7,7 @@ import SessionContext from "../../contexts/session-context";
 
 export default function RegisterPage() {
   const navigate = useNavigate();
+
   const dict = getDictionary();
 
   const { register } = use(SessionContext);

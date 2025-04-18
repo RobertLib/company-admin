@@ -10,6 +10,7 @@ export default function ResetPasswordPage() {
   const token = searchParams.get("token");
 
   const navigate = useNavigate();
+
   const dict = getDictionary();
 
   const { resetPassword } = use(SessionContext);

@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import { AppError } from "./lib/errors.js";
 import authRoute from "./routes/auth-route.js";
+import usersRoute from "./routes/users-route.js";
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/api/v1/", authRoute);
+app.use("/api/v1/users", usersRoute);
 
 app.use((req, res, next) => {
   res.status(404).send("Sorry can't find that!");

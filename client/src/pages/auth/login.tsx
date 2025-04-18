@@ -8,6 +8,7 @@ import SessionContext from "../../contexts/session-context";
 
 export default function LoginPage() {
   const navigate = useNavigate();
+
   const dict = getDictionary();
 
   const { login } = use(SessionContext);

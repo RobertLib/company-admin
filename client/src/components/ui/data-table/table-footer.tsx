@@ -9,7 +9,7 @@ interface TableFooterProps {
 }
 
 export function TableFooter({ limit, page, total }: TableFooterProps) {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [, setSearchParams] = useSearchParams();
 
   return (
     <footer className="mt-4 flex items-center justify-end gap-3">
@@ -17,8 +17,10 @@ export function TableFooter({ limit, page, total }: TableFooterProps) {
         defaultValue={limit}
         dim="sm"
         onChange={({ target }) => {
-          searchParams.set("limit", target.value);
-          setSearchParams(searchParams);
+          setSearchParams((prev) => {
+            prev.set("limit", target.value);
+            return prev;
+          });
         }}
         options={[5, 10, 15, 20, 25, 30, 50, 100].map((value) => ({
           label: value.toString(),
@@ -29,8 +31,10 @@ export function TableFooter({ limit, page, total }: TableFooterProps) {
       <Pagination
         limit={limit}
         onChange={(page) => {
-          searchParams.set("page", String(page));
-          setSearchParams(searchParams);
+          setSearchParams((prev) => {
+            prev.set("page", String(page));
+            return prev;
+          });
         }}
         page={page}
         total={total}

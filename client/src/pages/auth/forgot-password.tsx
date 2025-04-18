@@ -7,6 +7,7 @@ import SessionContext from "../../contexts/session-context";
 
 export default function ForgotPasswordPage() {
   const navigate = useNavigate();
+
   const dict = getDictionary();
 
   const { forgotPassword } = use(SessionContext);

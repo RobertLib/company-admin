@@ -1,6 +1,6 @@
-import { AppError } from "../../../server/src/lib/errors";
+import { AppError } from "../types/errors";
 import { createContext, useState } from "react";
-import { jwtDecode } from "jwt-decode";
+import { jwtDecode } from "../utils/jwt-decode";
 
 interface User {
   email: string;

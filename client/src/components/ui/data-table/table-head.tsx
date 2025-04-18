@@ -53,26 +53,27 @@ export function TableHead<T>({
   sortOrder,
   toggleSelectAll,
 }: TableHeadProps<T>) {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [, setSearchParams] = useSearchParams();
 
   const handleSort = useCallback(
     (key: string) => {
-      if (sortKey === key) {
-        if (sortOrder === "asc") {
-          searchParams.set("sortKey", key);
-          searchParams.set("sortOrder", "desc");
-        } else if (sortOrder === "desc") {
-          searchParams.delete("sortKey");
-          searchParams.delete("sortOrder");
+      setSearchParams((prev) => {
+        if (sortKey === key) {
+          if (sortOrder === "asc") {
+            prev.set("sortKey", key);
+            prev.set("sortOrder", "desc");
+          } else if (sortOrder === "desc") {
+            prev.delete("sortKey");
+            prev.delete("sortOrder");
+          }
+        } else {
+          prev.set("sortKey", key);
+          prev.set("sortOrder", "asc");
         }
-      } else {
-        searchParams.set("sortKey", key);
-        searchParams.set("sortOrder", "asc");
-      }
-
-      setSearchParams(searchParams);
+        return prev;
+      });
     },
-    [searchParams, setSearchParams, sortKey, sortOrder],
+    [setSearchParams, sortKey, sortOrder],
   );
 
   const handleFilterChange = (columnKey: string, value: string) => {
@@ -84,10 +85,11 @@ export function TableHead<T>({
       delete newFilters[columnKey];
     }
 
-    searchParams.set("filters", JSON.stringify(newFilters));
-    searchParams.set("page", "1");
-
-    setSearchParams(searchParams);
+    setSearchParams((prev) => {
+      prev.set("filters", JSON.stringify(newFilters));
+      prev.set("page", "1");
+      return prev;
+    });
   };
 
   return (
@@ -118,10 +120,11 @@ export function TableHead<T>({
               <button
                 className="link text-primary-500 ml-2 text-sm hover:underline"
                 onClick={() => {
-                  searchParams.delete("filters");
-                  searchParams.delete("page");
-
-                  setSearchParams(searchParams);
+                  setSearchParams((prev) => {
+                    prev.delete("filters");
+                    prev.delete("page");
+                    return prev;
+                  });
                 }}
                 type="button"
               >

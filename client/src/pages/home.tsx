@@ -1,3 +1,5 @@
+import { Navigate } from "react-router";
+
 export default function Home() {
-  return null;
+  return <Navigate to="/users" replace />;
 }
